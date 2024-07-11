@@ -1,0 +1,17 @@
+name: automerge
+on:
+  pull_request_review:
+    types:
+      - submitted
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge-release-branches
+        uses: "pascalgn/automerge-action@v0.16.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.HM_IT_ACTIONS_TOKEN }}"
+          MERGE_LABELS: "release"
+          MERGE_METHOD: "merge"
+          MERGE_REQUIRED_APPROVALS: 1
+          BASE_BRANCHES: "main"
