@@ -13,5 +13,4 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.HM_IT_ACTIONS_TOKEN }}"
           MERGE_LABELS: "release"
           MERGE_METHOD: "merge"
-          MERGE_REQUIRED_APPROVALS: 1
-          BASE_BRANCHES: "main"
+
